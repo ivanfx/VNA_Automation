@@ -1,0 +1,120 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  /*background-color: #f4f7f6;*/
+  background-image: url('/Assets/img/bg.png');
+  display: flex; /* Activa el modo flexible */
+  justify-content: center; /* Centra horizontalmente (eje X) */
+  align-items: center; /* Centra verticalmente (eje Y) */
+  min-height: 100vh; /* Obliga al body a medir toda la altura de la pantalla */
+  margin: 0; /* Quita márgenes por defecto */
+  /* border: 5px solid red;*/
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.btn {
+  margin-top: 40%;
+  width: 60%;
+  height: auto;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-border-radius: ;
+  -moz-border-radius: ;
+  -ms-border-radius: ;
+  -o-border-radius: ;
+}
+
+
+
+.btn:hover {
+  background-color: #45a049;
+}
+.btn:active {
+  background-color: #3e8e41;
+}
+
+#btn2{
+  background-color: #e16212;
+  
+}
+
+#btn2:hover {
+  background-color: #ee0936; 
+}
+#btn2:active {
+  background-color: #ff0000
+}
+
+
+
+#container {
+  width: 70%;
+  max-width: 95%; /* Para que no se corte en pantallas chicas */
+  /*border: 5px solid blue;*/
+  color: #333333;
+
+  display: flex; /* Convierte el contenedor en una caja flexible */
+  flex-direction: column; /* Apila los elementos (título, imagen, botón) uno abajo del otro */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente (si el contenedor tiene altura) */
+  gap: 20px; /* Separa los elementos automáticamente para que no se peguen */
+  margin: 20px auto; /* Centra el contenedor en la pantalla y le da aire arriba/abajo */
+
+  background-color: #ffffff; /* Fondo blanco para el área de trabajo */
+  
+  border-radius: 15px; /* Bordes suaves */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+  border: none; /* Quita el borde azul de prueba */
+}
+
+#container section img {
+  width: 20%;
+  height: auto;
+  display: block;
+}
+
+header {
+  margin-top: 2%;
+}
+
+h2 {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+    /* Aquí van los cambios para celular */
+    h1 {
+        font-size: 1.5rem; /* Ajusta este valor hasta que quepa bien */
+        line-height: 1.2;  /* Reduce el espacio entre líneas */
+        text-align: center;
+        padding: 0 10px;   /* Evita que las letras peguen en la orilla */
+    }
+    .btn{
+        width: 80%;
+    }
+    #container section img{
+        width: 40%;
+    }
+}
