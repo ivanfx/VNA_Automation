@@ -10,8 +10,21 @@ vna.send(str.encode("SENS:FREQ:STAR 1.6E9\n"))
 vna.send(str.encode("SENS:FREQ:STOP 2.4E9\n"))
 #reply=vna.recv(2056)
 #print (reply)
+vna.send(str.encode("SENS:FREQuency:SPAN?\n"))
+reply=vna.recv(2056)
+print (reply)
+vna.send(str.encode("SENS:FREQuency:CENTer?\n"))
+reply=vna.recv(2056)
+print (reply)
+
 vna.send(str.encode("SENS:SWEEP:POINT 16001\n"))
+vna.send(str.encode("SENS:SWEEP:POINT?\n"))
+vna_msg=b""
+while not (vna_msg.endswith(b'\n')):
+    vna_msg+=vna.recv(4096)
+    
+print(vna_msg)
 vna.send(str.encode("SENS:BAND 70E1\n"))
-vna.send(str.encode("CALCulate1:PARameter4:FORMat SMITh\n"))
+#vna.send(str.encode("CALCulate:PARameter4:FORMat SMITh\n"))
 vna.close()
 print ("Comunicación terminada con exito")
